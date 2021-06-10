@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { Widget } from "../widget.interface";
+import { BackendCallService } from "../../common/services/backend.service";
 
 @Injectable()
 export class WidgetService {
     private _widgetCount: number = 0;
-    
-    constructor() {}
+
+    constructor(private _backendCallService: BackendCallService) {}
 
     getWidgetsFromDatabase(): Observable<Widget[]> {
         // simulated data retrieval
@@ -40,5 +41,9 @@ export class WidgetService {
 
     updateWidgetCount(count: number): void {
         this._widgetCount = count;
+    }
+
+    removeWidget(widget: Widget): Observable<void> {
+        return this._backendCallService.makeRequest("removeWidget", {widgetID: widget.id});
     }
 }

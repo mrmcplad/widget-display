@@ -8,6 +8,10 @@
             [alt]="widget.tooltip + ' icon'"
         /> — <span>{{ widget.name | lowercase }}</span>
         <div class="widget-text" [innerHTML]="widget.description"></div>
+        <button
+            (click)="buyWidget(widget)"
+            class="btn btn-default"
+            >Buy now! {{ widget.price | currency }}</button>
     </li>
 </ul>
 <p *ngIf="widgets.length === 0">No widgets to display.</p>

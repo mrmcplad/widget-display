@@ -5,4 +5,5 @@ export interface Widget {
     name: string;
     description: string;
     releaseDate: Date;
+    whbp: boolean; // 'widget has been purchased'
 }
