@@ -1,4 +1,5 @@
 export interface Widget {
+    id: number;
     iconURL: string;
     tooltip: string;
     name: string;
