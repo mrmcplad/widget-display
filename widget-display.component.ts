@@ -16,9 +16,23 @@ export class WidgetDisplayComponent implements OnInit {
         this._widgetService
             .getWidgetsFromDatabase()
             .subscribe((widgets: Widget[]) => {
-                this.widgets = widgets.sort(this._sortWidgets);
+                this.widgets = widgets
+                    .sort(this._sortWidgets)
+                    .forEach((widget: Widget) => {
+                        // init whbp flag on first load
+                        widget.whbp = false;
+                    });
                 this._widgetService.updateWidgetCount(widgets.length);
             });
+    }
+
+    buyWidget(widget: Widget) {
+        // call buyItem on the buying service
+        this._buyingService.buyItem(widget);
+        // set the whbp flag to true
+        widget.whbp = true;
+        // call removeWidget to remove the widget from the backend
+        this._widgetService.removeWidget(widget.id);
     }
 
     private _sortWidgets(a: Widget, b: Widget): number {
