@@ -1,0 +1,14 @@
+<ul *ngIf="widgets.length > 0">
+    <li *ngFor="let widget of widgets">
+        <img
+            [src]="widget.iconURL"
+            class="widget-icon"
+            [ngbTooltip]="widget.tooltip"
+            placement="right"
+            [alt]="widget.tooltip + ' icon'"
+        /> — <span>{{ widget.name | lowercase }}</span>
+        <div class="widget-text" [innerHTML]="widget.description"></div>
+    </li>
+</ul>
+<p *ngIf="widgets.length === 0">No widgets to display.</p>
+<hr />
