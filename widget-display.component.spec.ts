@@ -32,6 +32,7 @@ describe("WidgetDisplayComponent", () => {
         beforeEach(() => {
             mockWidgets = [
                 {
+                    id: 1,
                     iconURL: "/icons/widget-alpha.png",
                     tooltip: "Widget Alpha",
                     name: "Alpha",
@@ -39,6 +40,7 @@ describe("WidgetDisplayComponent", () => {
                     releaseDate: new Date("2021/06/10")
                 },
                 {
+                    id: 2,
                     iconURL: "/icons/widget-gamma.png",
                     tooltip: "Widget Gamma",
                     name: "Gamma",
@@ -46,6 +48,7 @@ describe("WidgetDisplayComponent", () => {
                     releaseDate: new Date("2021/06/08")
                 },
                 {
+                    id: 3,
                     iconURL: "/icons/widget-omega.png",
                     tooltip: "Widget Omega",
                     name: "Omega",
