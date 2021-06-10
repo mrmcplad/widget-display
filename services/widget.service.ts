@@ -14,7 +14,7 @@ export class WidgetService {
         return of([
             {
                 id: 1,
-                iconURL: "/sf/ui/images/icons/widget-alpha.png",
+                iconURL: "/icons/widget-alpha.png",
                 tooltip: "Widget Alpha",
                 name: "Alpha",
                 description: "Alpha is the funnest widget",
@@ -22,7 +22,7 @@ export class WidgetService {
             },
             {
                 id: 2,
-                iconURL: "/sf/ui/images/icons/widget-gamma.png",
+                iconURL: "/icons/widget-gamma.png",
                 tooltip: "Widget Gamma",
                 name: "Gamma",
                 description: "Gamma is the weirdest widget",
@@ -30,7 +30,7 @@ export class WidgetService {
             },
             {
                 id: 3,
-                iconURL: "/sf/ui/images/icons/widget-omega.png",
+                iconURL: "/icons/widget-omega.png",
                 tooltip: "Widget Omega",
                 name: "Omega",
                 description: "Omega is the angriest widget",
